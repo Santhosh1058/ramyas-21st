@@ -1,0 +1,157 @@
+.lyrics-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #d8a0b5;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    position: relative;
+    overflow-y: auto;
+    /* Allow scrolling */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: center;
+    padding-bottom: 100px;
+    /* Space for scrolling */
+}
+
+/* 1. Top Left: Pearls (Image) */
+.decor-pearls {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 650px;
+    z-index: 5;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.decor-pearls img {
+    width: 100%;
+    height: auto;
+}
+
+/* 2. Center: Lyrics Card Wrapper - Centered visually initially */
+.lyrics-card-container {
+    margin-top: 10vh;
+    /* Push down slightly */
+    margin-bottom: 50px;
+    z-index: 20;
+}
+
+/* 3. Polaroid - Positioned absolutely but can scroll with container if strictly placed, 
+   but user wants specific placement. keeping absolute relative to container top. */
+
+/* 4. Mirror */
+
+/* 5. Right: Balloons (Image) */
+.decor-balloons {
+    position: absolute;
+    top: 50px;
+    right: -20px;
+    width: 400px;
+    z-index: 7;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.decor-balloons img {
+    width: 100%;
+    height: auto;
+}
+
+/* Text Styling */
+.bg-text-top-right {
+    position: absolute;
+    top: 60px;
+    right: 400px;
+    font-family: 'MoonTime', cursive;
+    /* Updated Font */
+    color: #5e3b3b;
+    font-size: 2.2rem;
+    /* Larger for new font */
+    max-width: 300px;
+    text-align: right;
+    transform: rotate(-3deg);
+    z-index: 4;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.nav-next {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    font-family: var(--font-handwriting);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.nav-next:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .lyrics-section {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+
+    .placeholder-pearls-text {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .placeholder-balloons-text {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .lyrics-card-placeholder {
+        width: 100%;
+        height: 450px;
+        margin: 20px 0;
+    }
+
+    .placeholder-polaroid-text {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 20px;
+    }
+
+    .placeholder-mirror-text {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .bg-text-top-right {
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

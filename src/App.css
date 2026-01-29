@@ -1,0 +1,7 @@
+/* App Container */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  /* Ensure it doesn't clip children */
+}

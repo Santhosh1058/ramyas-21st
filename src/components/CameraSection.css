@@ -1,0 +1,204 @@
+.camera-section {
+    width: 100%;
+    min-height: 100vh;
+    /* Allow it to grow beyond screen */
+    background-color: #660f0f;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 80px 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* This might keep things centered in view if short */
+    overflow-x: hidden;
+    padding-bottom: 50px;
+    /* Space at bottom */
+}
+
+/* Content Layout */
+/* Content Layout */
+.content-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    gap: 20px;
+    /* Reduced gap to remove extra space */
+    margin-top: 0;
+    /* No longer need top margin as ribbon pushes it down */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.text-block {
+    flex: 1;
+    color: #ffffff;
+    font-family: 'DistrictStreet', cursive;
+    font-size: 1.2rem;
+    line-height: 2;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    font-weight: normal;
+    letter-spacing: 0.2em;
+}
+
+.text-block.left {
+    text-align: right;
+}
+
+.text-block.right {
+    text-align: left;
+}
+
+/* Camera Placeholder Container */
+.camera-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    /* Generous space for whatever image user adds */
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-next {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: var(--font-handwriting);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.nav-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Title Styling */
+/* Footer Layout */
+.camera-footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    z-index: 10;
+}
+
+.camera-footer-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Margins removed, handled by container */
+}
+
+/* Footer Video */
+.footer-video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-video {
+    width: 150px;
+    height: 266px;
+    /* 9:16 Aspect Ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.footer-video:hover {
+    transform: scale(1.05);
+}
+
+.click-hint-small {
+    font-size: 1.2rem;
+    /* Increased for handwriting readability */
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-handwriting);
+    /* Matches Screen 1 */
+    margin-top: 5px;
+}
+
+/* Restored Text Styles */
+.footer-happy {
+    font-family: 'Cintarini', cursive;
+    font-size: 5rem;
+    color: #ffb7b2;
+    margin-bottom: -30px;
+    margin-left: -150px;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-birthday {
+    font-family: 'Condenso Demo', sans-serif;
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    z-index: 1;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-sunshine {
+    font-family: 'Cintarini', cursive;
+    font-size: 4rem;
+    color: #ffb7b2;
+    /* Matches 'happy' */
+    margin-top: -20px;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+    .camera-footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .content-grid {
+        flex-direction: column;
+    }
+
+    .text-block {
+        text-align: center !important;
+    }
+
+    .camera-container {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+    }
+
+    .footer-happy {
+        font-size: 3rem;
+        margin-left: -100px;
+    }
+
+    .footer-birthday {
+        font-size: 4rem;
+    }
+}

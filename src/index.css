@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Syne:wght@700;800&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-maroon: #4a0404;
+  --color-maroon-dark: #2d0202;
+  --color-pink-soft: #ffe4e6;
+  --color-pink-deep: #fb7185;
+  --color-off-white: #fdfbf7;
+  --color-gray-dark: #1f1f1f;
+  --color-seal-red: #8a1c1c;
+  --color-paper: #f2f0e9;
+
+  /* Typography */
+  --font-heading: 'Instrument Serif', serif;
+  --font-handwriting: 'DistrictStreet', cursive;
+  /* User requested Cintarini */
+  /* Beautiful handwritten font */
+  --font-body: 'Cormorant Garamond', 'Times New Roman', serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+
+  /* Transitions */
+  --transition-smooth: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@font-face {
+  font-family: 'Cintarini';
+  src: url('./assets/fonts/cintarini/Cintarini.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Condenso Demo';
+  src: url('./assets/fonts/condenso-demo/Condenso Demo.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OceanTrace';
+  src: url('./assets/fonts/ocean-trace-personal-use/OceanTrace.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MoonTime';
+  src: url('./assets/fonts/Moontime-Font/MoonTime-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DistrictStreet';
+  src: url('./assets/fonts/DistrictStreet.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rottersand';
+  src: url('./assets/fonts/Rottersand/Rottersand.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-handwriting);
+  /* Default to handwriting for the 'notes' feel */
+  background-color: var(--color-off-white);
+  color: var(--color-maroon);
+  overflow-x: hidden;
+  /* overflow-y: auto; handled by document/html */
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  min-height: 100vh;
+  /* Allow growth */
+  height: auto;
+  font-size: 1.2rem;
+  /* Slightly larger for handwriting legibility */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

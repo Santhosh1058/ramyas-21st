@@ -1,0 +1,235 @@
+/* Scrapbook / Craft Theme */
+.cake-section-scrapbook {
+    width: 100%;
+    min-height: 100vh;
+    /* Allow scroll */
+    display: flex;
+    flex-direction: column;
+    /* Stack Card then Camera */
+    align-items: center;
+    background-color: #d8c29d;
+    background-image:
+        radial-gradient(#bca37e 2px, transparent 2.5px),
+        radial-gradient(#bca37e 2px, transparent 2.5px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    position: relative;
+    overflow-y: auto;
+    /* Enable Scroll */
+    overflow-x: hidden;
+    padding-bottom: 150px;
+    /* Space for scrolling */
+}
+
+/* Background Texture Layer */
+.craft-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* Stage */
+.card-stage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* States */
+.card-closed-state,
+.card-open-state {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Images */
+.card-img {
+    max-width: 350px;
+    width: 80vw;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+}
+
+.shadow-lg {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-wide {
+    max-width: 600px;
+    width: 90vw;
+    height: auto;
+    border-radius: 5px;
+    border: none;
+}
+
+.shadow-xl {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Hints */
+.click-hint {
+    margin-top: 15px;
+    font-family: var(--font-handwriting);
+    font-weight: bold;
+    color: #554433;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transform: rotate(-2deg);
+}
+
+/* Stickers */
+.scrapbook-sticker {
+    position: absolute;
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.2));
+    pointer-events: none;
+    z-index: 5;
+}
+
+.heart-sticker {
+    top: 10%;
+    right: 15%;
+    transform: rotate(15deg);
+    color: #e57373;
+}
+
+.star-sticker {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(-10deg);
+    color: #ffd54f;
+}
+
+/* User Feature: Top Right Memory on Cake Page */
+.cake-memory-item {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 180px;
+    z-index: 60;
+    cursor: pointer;
+    transform: rotate(5deg);
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.cake-memory-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.memory-hint-cake {
+    display: block;
+    text-align: center;
+    font-family: var(--font-handwriting);
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* --- CAMERA SECTION --- */
+.camera-scroll-section {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    z-index: 10;
+}
+
+.camera-intro h2 {
+    font-family: var(--font-heading);
+    color: #4a3b2a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.footer-signature {
+    margin-top: 40px;
+    font-family: var(--font-handwriting);
+    font-size: 1.5rem;
+    color: #554433;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Polaroid Container Styles */
+.polaroid-camera-frame {
+    background: #fff;
+    padding: 15px 15px 60px 15px;
+    /* Bottom space for writing or button */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: rotate(2deg);
+    border-radius: 2px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.live-feed-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    /* Standard Polaroid Ratio */
+    background: #222;
+    overflow: hidden;
+}
+
+.live-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.shutter-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    color: white;
+    border: 3px solid white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s;
+    font-family: var(--font-handwriting);
+    white-space: nowrap;
+}
+
+.shutter-btn:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .card-img {
+        max-width: 280px;
+    }
+
+    .card-img-wide {
+        max-width: 320px;
+    }
+
+    .camera-intro h2 {
+        font-size: 1.5rem;
+    }
+}

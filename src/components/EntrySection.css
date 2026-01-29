@@ -1,0 +1,90 @@
+.entry-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    /* Dark bg to make video pop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Video */
+.entry-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    /* "Less opacity" as requested */
+    transition: opacity 1s ease;
+    z-index: 0;
+}
+
+.entry-bg-video.fade-out {
+    opacity: 0;
+}
+
+/* Content */
+.entry-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Exit Animation: Fly Up & Blur */
+.entry-content.scale-out {
+    transform: translateY(-80px) scale(0.95);
+    opacity: 0;
+    filter: blur(10px);
+}
+
+/* Custom Envelope */
+.custom-envelope-wrapper {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-envelope-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.custom-envelope-img {
+    max-width: 550px;
+    /* Increased size as requested */
+    width: 90vw;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+/* Hint Text */
+.pulse-hint {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-handwriting);
+    font-size: 1rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

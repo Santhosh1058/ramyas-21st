@@ -1,0 +1,295 @@
+.newspaper-section {
+    width: 100%;
+    /* Use min-height 100vh so it can grow */
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    position: relative;
+    /* Allow scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    /* Block layout for scrolling */
+}
+
+/* Background Texture - Fixed Position */
+.newspaper-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/newspaper_section/newspaper_bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: contrast(1.2) brightness(0.9);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Collage Container: Relative for absolute positioning */
+.collage-container {
+    position: relative;
+    width: 100%;
+    /* Ensure enough height for all scrolled items */
+    min-height: 250vh;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+/* --- Generic Collage Item --- */
+.collage-item {
+    position: absolute;
+    cursor: grab;
+    transition: z-index 0.2s;
+}
+
+.collage-item:active {
+    cursor: grabbing;
+}
+
+.collage-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* --- Specific Positioning --- */
+/* User Request: Love Middle between Star and Square, Smaller Size */
+
+/* 1. STAR: Left (Original position) */
+.item-star {
+    top: 100px;
+    left: -50px;
+    width: 350px;
+    z-index: 10;
+}
+
+/* 2. LOVE (Heart) - EXACTLY MIDDLE & SLIGHTLY LOWER */
+/* "middle in y axis" -> Horizontal Center (Left 50%) */
+/* "x axis slight below origin" -> Moved Down (Top 220px) */
+/* 2. LOVE (Heart) - EXACTLY BELOW MOON */
+/* Moon Bottom: ~170px (50px top + 120px height). */
+/* Position Heart at 180px to sit just below it. */
+/* USE MARGIN AUTO to avoid conflict with framer-motion drag transform */
+.item-love {
+    top: 180px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 400px;
+    max-width: 80vw;
+    z-index: 25;
+}
+
+/* 3. SQUARE - Right */
+.item-square {
+    top: 200px;
+    right: -20px;
+    width: 320px;
+    transform: rotate(5deg);
+    z-index: 15;
+}
+
+/* 4. FLOWER - Bottom Left */
+.item-flower {
+    top: 600px;
+    /* Shifted up slightly as the top group is more compact now */
+    left: 5%;
+    width: 350px;
+    z-index: 12;
+}
+
+/* --- Scroll Gallery (Others Below) --- */
+
+.item-blossom {
+    top: 700px;
+    right: 5%;
+    /* Moved right as requested */
+    width: 320px;
+}
+
+.item-circle {
+    top: 1000px;
+    left: 10%;
+    width: 300px;
+}
+
+.item-mirror {
+    top: 1100px;
+    right: 5%;
+    width: 300px;
+}
+
+.item-window {
+    top: 1350px;
+    left: 5%;
+    /* Moved left as requested */
+    width: 380px;
+}
+
+/* Binder Clip Overlay - Follows Heart */
+.binder-clip-overlay {
+    position: absolute;
+    top: -30px;
+    /* Adjusted for smaller heart */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    /* Scaled down further */
+    height: 60px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/81/81932.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 30;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+
+/* --- Stickers --- */
+
+.sticker {
+    position: absolute;
+    z-index: 60;
+    /* Higher than frames */
+    cursor: grab;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+    mix-blend-mode: multiply;
+}
+
+/* Blossom Removed */
+
+.sticker-perfect {
+    top: 550px;
+    /* In the vertical gap between Square (top-right) and Blossom (lower-right) */
+    right: 15%;
+    /* Aligned to the right column */
+    width: 160px;
+    /* Reduced size as requested */
+    transform: rotate(15deg);
+    /* Tilted */
+    z-index: 60;
+}
+
+/* Moon - Centered Top */
+.sticker-moon {
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 120px;
+}
+
+/* --- Central Text Frame --- */
+.newspaper-text-frame {
+    position: absolute;
+    top: 650px;
+    /* Centered in the gap */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin: 0 auto;
+    width: 350px;
+    /* Widened for text */
+    text-align: center;
+    z-index: 40;
+    font-family: var(--font-handwriting);
+    /* Updated to District Street as requested */
+    color: #2a2a2a;
+    background: transparent;
+    /* Removed background */
+    padding: 0;
+    /* Removed padding since no border */
+    border: none;
+    /* Removed border */
+    box-shadow: none;
+    /* Removed shadow */
+}
+
+.newspaper-text-frame .newspaper-text-content p {
+    font-size: 1.5rem;
+    /* Increased size (~3px larger) */
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+
+
+/* Sea Shell - Bottom Left near Circle */
+.sticker-shell {
+    top: 1200px;
+    left: 5%;
+    width: 120px;
+    transform: rotate(-10deg);
+}
+
+/* User Requested Top Right Memory */
+/* User Requested Top Right Memory */
+.item-top-right-memory {
+    top: 40px;
+    right: 40px;
+    width: 200px;
+    /* Reduced from 380px to 200px */
+    z-index: 55;
+    cursor: pointer;
+    transform: rotate(3deg);
+}
+
+.item-top-right-memory img {
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+.memory-hint {
+    display: block;
+    text-align: center;
+    font-family: var(--font-handwriting);
+    margin-top: 5px;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+/* Flowers - Bottom Right near Mirror */
+.sticker-flowers {
+    top: 1350px;
+    right: 5%;
+    width: 150px;
+    transform: rotate(10deg);
+}
+
+/* --- Uno Card Trigger --- */
+.uno-card-trigger-img {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 120px;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uno-card-trigger-img img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transform: rotate(5deg);
+    mix-blend-mode: normal;
+}
+
+.uno-hint {
+    margin-top: 10px;
+    font-family: 'MoonTime', cursive;
+    color: #333;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 10px;
+    border-radius: 10px;
+    pointer-events: none;
+}
