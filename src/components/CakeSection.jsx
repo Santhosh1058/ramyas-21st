@@ -20,10 +20,10 @@ const CakeSection = () => {
             {/* --- TOP RIGHT MEMORY (User Feature) --- */}
             <motion.div
                 className="cake-memory-item"
-                initial={{ opacity: 0, y: -50, rotate: 5 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 1 }}
-                whileHover={{ scale: 1.05, rotate: 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
                 onClick={(e) => {
                     const audio = document.getElementById('card-memory-song');
                     if (audio) {

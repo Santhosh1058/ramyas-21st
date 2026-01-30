@@ -105,7 +105,7 @@ const NewspaperSection = ({ onNext }) => {
                         </p>
                         <br />
                         <p>
-                            You’re so beautiful in a way that feels familiar, like an Ilaiyaraaja song I’ve heard a thousand times and still go back to. I don’t see your eyes often, but every time I do, they quietly mess with my heart a little even through screen, your hair always falls just the way i do for you, and your voice has this calm that makes everything slow down. Nothing about you feels forced it just feels right
+                            You’re so beautiful in a way that feels familiar, like an Ilaiyaraaja song I’ve heard a thousand times and still go back to. I don’t see your eyes often, but every time I do, they quietly mess with my heart a little even through screen, your hair always falls just the way i do for you, and your voice has this calm that makes everything slow down. Nothing about you feels forced it just feels right You are the kind of Beauty Poet write about
                         </p>
                     </div>
                 </motion.div>
